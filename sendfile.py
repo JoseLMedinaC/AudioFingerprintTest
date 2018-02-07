@@ -44,13 +44,9 @@ def connectserver(file,puerto):
 			vectors=[] 
 			for key,value in datosjson.iteritems():
 				vectors.append(str(key)) 	#vectors load all candidates retriving by server
-			if len(vectors)>1:
-				for vector in vectors: # rank and print all candidates 
-					print vector[0]
-					nombre=datosjson[vector[0]][0][1]
+			for vector in vectors: # rank and print all candidates 
+					nombre=datosjson[vector][0][1]
 					print(nombre) # print the name of a candidate
-			else:
-					print(datosjson['vector0'][0][1]) #print the result
 			return 1
 
 if __name__=='__main__':
