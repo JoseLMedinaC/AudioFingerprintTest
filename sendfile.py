@@ -7,7 +7,7 @@ import sys
 import time
 import numpy as np
 '''
-This script conects to a server in order to retrive information about a audio sample 
+This script connects client to a server in order to retrieve information about an audio sample 
 Audio sample name for this example is input.wav
 The server is listening at 190.15.132.90 port 9050
 '''
@@ -33,7 +33,7 @@ def connectserver(file,port):
 		while(l):		#send file
 			sock.send(l)
 			l=f.read(1024)	
-		respuesta=sock.recv(2048) #recive a response from server		
+		respuesta=sock.recv(2048) #receive a response from server		
 		sock.close
 		if 'message' in respuesta: #there is no audio which match with the sample 
 			print respuesta
@@ -43,7 +43,7 @@ def connectserver(file,port):
 			datosjson=json.loads(str(respuesta)) #load data as json
 			vectors=[] 
 			for key,value in datosjson.iteritems():
-				vectors.append(str(key)) 	#vectors load all candidates retriving by server
+				vectors.append(str(key)) 	#vectors load all candidates retrieving by server
 			for vector in vectors: # rank and print all candidates 
 					nombre=datosjson[vector][0][1]
 					print(nombre) # print the name of a candidate
