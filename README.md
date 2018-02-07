@@ -21,6 +21,7 @@ $ python sendfile.py
 ```
 # Results
 This plot is the result of computing various audios samples varying SNR and modularity.
+
 Precisión=>Accuracy
 FP========>False Positive Rate
 
