@@ -11,8 +11,8 @@ This script conects to a server in order to retrive information about a audio sa
 Audio sample name for this example is input.wav
 The server is listening at 190.15.132.90 port 9050
 '''
-def connectserver(file,puerto):
-		server_address =('190.15.132.90', puerto)
+def connectserver(file,port):
+		server_address =('190.15.132.90', port)
 		sock = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
 		sock.connect(server_address) #connect to server
 		size=int(os.stat(file).st_size)
@@ -24,7 +24,7 @@ def connectserver(file,puerto):
 		sock.send(ext)
 		if  'OK' not in  str(sock.recv(1024)):
 			return 0
-		quality='low'
+		quality='low' #It is used when the audio has low quality
 		sock.send(quality)
 		if  'OK' not in  str(sock.recv(1024)):
 			return 0
@@ -33,9 +33,9 @@ def connectserver(file,puerto):
 		while(l):		#send file
 			sock.send(l)
 			l=f.read(1024)	
-		respuesta=sock.recv(2048) #reseve a response from server		
+		respuesta=sock.recv(2048) #recive a response from server		
 		sock.close
-		if 'message' in respuesta: #there is no audio wich match with the sample 
+		if 'message' in respuesta: #there is no audio which match with the sample 
 			print respuesta
 			return 0
 		else:
@@ -52,4 +52,4 @@ def connectserver(file,puerto):
 if __name__=='__main__':
 	file='input.wav'		#file name
 	result=connectserver(file,9050)									
-	print('Termino')
+	print('Finished')
