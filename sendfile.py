@@ -54,6 +54,6 @@ def connectserver(file,puerto):
 			return 1
 
 if __name__=='__main__':
-	file='salida.wav'		#file name
+	file='input.wav'		#file name
 	result=connectserver(file,9050)									
 	print('Termino')
