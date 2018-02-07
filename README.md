@@ -6,7 +6,7 @@ Multimedia content that was uploaded to the server
 # AudioSamples
 Somo degraded audio samples with various size and #SNR (file_(size)_SNR_(#).wav)  
 # Sendfile.py
-Connect the server and load an audio sample in order to retrieve a link of aditional information about the audio sample.
+Python script for connecting to server and loading an audio sample in order to retrieve a link of aditional information about the audio sample.
 # input.wav
 This file will be uploaded to the server 
 
