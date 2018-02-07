@@ -7,7 +7,7 @@ Multimedia content that was uploaded to the server
 Some degraded audio samples with various size and #SNR (file_(size)_SNR_(#).wav)  
 # sendfile.py
 Python script for connecting to server and loading an audio sample in order to retrieve a link of additional information about the audio sample.
-By default the script uses input.wav, but it could be change by another file with the following extension "wav, mp4, mp3, 3gp"
+By default the script uses input.wav, but it could be changed by another file with the following extension "wav, mp4, mp3, 3gp"
 ```python
 file='input.wav'	
 ```
@@ -19,4 +19,7 @@ $ git clone https://github.com/JoseLMedinaC/AudioFingerprintTest.git ./AudioFing
 $ cd AudioFingerprintTest
 $ python sendfile.py
 ```
+# Results
+This plot is the result of computing various audios samples varying SNR and modularity 
+![Accuracy and Reliability](img/accuracy.png)
 
